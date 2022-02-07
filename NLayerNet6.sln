@@ -3,17 +3,22 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLayerNet6.Core", "NLayerNet6.Core\NLayerNet6.Core.csproj", "{88A1BD1C-3B01-410F-8441-7C265292F895}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NLayerNet6.Core", "NLayerNet6.Core\NLayerNet6.Core.csproj", "{88A1BD1C-3B01-410F-8441-7C265292F895}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLayerNet6.Repository", "NLayerNet6.Repository\NLayerNet6.Repository.csproj", "{855973C7-5C26-4FF7-8238-3ED4A5810C71}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NLayerNet6.Repository", "NLayerNet6.Repository\NLayerNet6.Repository.csproj", "{855973C7-5C26-4FF7-8238-3ED4A5810C71}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLayerNet6.Service", "NLayerNet6.Service\NLayerNet6.Service.csproj", "{58D02BAC-E01F-4B01-B159-C350B9A0F167}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NLayerNet6.Service", "NLayerNet6.Service\NLayerNet6.Service.csproj", "{58D02BAC-E01F-4B01-B159-C350B9A0F167}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLayerNet6.Caching", "NLayerNet6.Caching\NLayerNet6.Caching.csproj", "{AC37958A-29A9-42DE-A94A-C39B567BC756}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NLayerNet6.Caching", "NLayerNet6.Caching\NLayerNet6.Caching.csproj", "{AC37958A-29A9-42DE-A94A-C39B567BC756}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLayerNet6.API", "NLayerNet6.API\NLayerNet6.API.csproj", "{C49FD132-292C-423F-8D57-8617F6CA53FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NLayerNet6.API", "NLayerNet6.API\NLayerNet6.API.csproj", "{C49FD132-292C-423F-8D57-8617F6CA53FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLayerNet6.Web", "NLayerNet6.Web\NLayerNet6.Web.csproj", "{D46E9915-6849-4755-9C30-114DC85011F0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NLayerNet6.Web", "NLayerNet6.Web\NLayerNet6.Web.csproj", "{D46E9915-6849-4755-9C30-114DC85011F0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BF6AF158-9BBE-4695-89ED-00E9689BBAD9}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
