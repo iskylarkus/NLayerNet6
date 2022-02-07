@@ -1,4 +1,4 @@
-﻿namespace NLayerNet6.Core
+﻿namespace NLayerNet6.Core.Models
 {
     public class Category:BaseEntity
     {

@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using NLayerNet6.Core;
+using NLayerNet6.Core.Models;
 
 namespace NLayerNet6.Repository.Seeds
 {
