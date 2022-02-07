@@ -1,9 +1,12 @@
 using Microsoft.EntityFrameworkCore;
 using NLayerNet6.Core.Repositories;
+using NLayerNet6.Core.Services;
 using NLayerNet6.Core.UnitOfWorks;
 using NLayerNet6.Repository;
 using NLayerNet6.Repository.Repositories;
 using NLayerNet6.Repository.UnitOfWorks;
+using NLayerNet6.Service.Mapping;
+using NLayerNet6.Service.Services;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,6 +20,8 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped(typeof(IRepository<>),typeof(GenericRepository<>));
+builder.Services.AddScoped(typeof(IService<>), typeof(Service<>));
+builder.Services.AddAutoMapper(typeof(MapProfile));
 
 builder.Services.AddDbContext<AppDbContext>(x =>
 {
