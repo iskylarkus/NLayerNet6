@@ -4,7 +4,7 @@ using System.Linq.Expressions;
 
 namespace NLayerNet6.Repository.Repositories
 {
-    internal class GenericRepository<T> : IRepository<T> where T : class
+    public class GenericRepository<T> : IRepository<T> where T : class
     {
         protected readonly AppDbContext _context;
         private readonly DbSet<T> _dbSet;
