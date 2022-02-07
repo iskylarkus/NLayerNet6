@@ -2,7 +2,7 @@
 
 namespace NLayerNet6.Core.Repositories
 {
-    public interface IGenericRepository<T> where T : class
+    public interface IRepository<T> where T : class
     {
         Task<T> GetByIdAsync(int id);
 
