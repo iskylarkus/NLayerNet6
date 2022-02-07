@@ -6,7 +6,7 @@ namespace NLayerNet6.Core.Repositories
     {
         Task<T> GetByIdAsync(int id);
 
-        IQueryable<T> GetAll(Expression<Func<T,bool>> expression);
+        IQueryable<T> GetAll();
         
         IQueryable<T> Where(Expression<Func<T,bool>> expression);
 
