@@ -4,12 +4,12 @@ using System.Linq.Expressions;
 
 namespace NLayerNet6.Repository.Repositories
 {
-    public class GenericRepository<T> : IRepository<T> where T : class
+    public class Repository<T> : IRepository<T> where T : class
     {
         protected readonly AppDbContext _context;
         private readonly DbSet<T> _dbSet;
 
-        public GenericRepository(AppDbContext appDbContext)
+        public Repository(AppDbContext appDbContext)
         {
             _context = appDbContext;
             _dbSet = _context.Set<T>();
