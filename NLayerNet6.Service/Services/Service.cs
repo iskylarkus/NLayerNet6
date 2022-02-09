@@ -2,6 +2,7 @@
 using NLayerNet6.Core.Repositories;
 using NLayerNet6.Core.Services;
 using NLayerNet6.Core.UnitOfWorks;
+using NLayerNet6.Service.Exceptions;
 using System.Linq.Expressions;
 
 namespace NLayerNet6.Service.Services
@@ -41,9 +42,16 @@ namespace NLayerNet6.Service.Services
             return await _repository.GetAll().ToListAsync();
         }
 
-        public Task<T> GetByIdAsync(int id)
+        public async Task<T> GetByIdAsync(int id)
         {
-            return _repository.GetByIdAsync(id);
+            var entity = await _repository.GetByIdAsync(id);
+
+            if (entity == null)
+            {
+                throw new NotFoundException($"{typeof(T).Name}({id}) does not exist");
+            }
+
+            return entity;
         }
 
         public async Task RemoveAsync(T entity)
