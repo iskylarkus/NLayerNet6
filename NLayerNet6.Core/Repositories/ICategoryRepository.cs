@@ -2,7 +2,7 @@
 
 namespace NLayerNet6.Core.Repositories
 {
-    public interface ICategoryRepository:IRepository<Category>
+    public interface ICategoryRepository:IGenericRepository<Category>
     {
         Task<Category> GetCategoryByIdWithProductsAsync(int id);
     }

@@ -8,9 +8,9 @@ namespace NLayerNet6.API.Filters
 {
     public class NotFoundFilter<T> : IAsyncActionFilter where T : BaseEntity
     {
-        private readonly IService<T> _service;
+        private readonly IGenericService<T> _service;
 
-        public NotFoundFilter(IService<T> service)
+        public NotFoundFilter(IGenericService<T> service)
         {
             _service = service;
         }

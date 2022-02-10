@@ -7,12 +7,12 @@ using System.Linq.Expressions;
 
 namespace NLayerNet6.Service.Services
 {
-    public class Service<T> : IService<T> where T : class
+    public class GenericService<T> : IGenericService<T> where T : class
     {
-        private readonly IRepository<T> _repository;
+        private readonly IGenericRepository<T> _repository;
         private readonly IUnitOfWork _unitOfWork;
 
-        public Service(IRepository<T> repository, IUnitOfWork unitOfWork)
+        public GenericService(IGenericRepository<T> repository, IUnitOfWork unitOfWork)
         {
             _repository = repository;
             _unitOfWork = unitOfWork;

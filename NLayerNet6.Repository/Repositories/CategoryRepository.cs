@@ -4,7 +4,7 @@ using NLayerNet6.Core.Repositories;
 
 namespace NLayerNet6.Repository.Repositories
 {
-    public class CategoryRepository : Repository<Category>, ICategoryRepository
+    public class CategoryRepository : GenericRepository<Category>, ICategoryRepository
     {
         public CategoryRepository(AppDbContext appDbContext) : base(appDbContext)
         {

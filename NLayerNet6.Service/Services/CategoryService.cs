@@ -7,11 +7,11 @@ using NLayerNet6.Core.UnitOfWorks;
 
 namespace NLayerNet6.Service.Services
 {
-    public class CategoryService : Service<Category>, ICategoryService
+    public class CategoryService : GenericService<Category>, ICategoryService
     {
         private readonly ICategoryRepository _categoryRepository;
         private readonly IMapper _mapper;
-        public CategoryService(IRepository<Category> repository, IUnitOfWork unitOfWork, ICategoryRepository categoryRepository, IMapper mapper) : base(repository, unitOfWork)
+        public CategoryService(IGenericRepository<Category> repository, IUnitOfWork unitOfWork, ICategoryRepository categoryRepository, IMapper mapper) : base(repository, unitOfWork)
         {
             _categoryRepository = categoryRepository;
             _mapper = mapper;

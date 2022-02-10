@@ -3,7 +3,7 @@ using NLayerNet6.Core.Models;
 
 namespace NLayerNet6.Core.Services
 {
-    public interface ICategoryService:IService<Category>
+    public interface ICategoryService:IGenericService<Category>
     {
         Task<ResponseDto<CategoryWithProductsDto>> GetCategoryByIdWithProductsAsync(int id);
     }

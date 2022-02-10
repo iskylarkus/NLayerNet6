@@ -4,7 +4,7 @@ using NLayerNet6.Core.Repositories;
 
 namespace NLayerNet6.Repository.Repositories
 {
-    public class ProductRepository : Repository<Product>, IProductRepository
+    public class ProductRepository : GenericRepository<Product>, IProductRepository
     {
         public ProductRepository(AppDbContext appDbContext) : base(appDbContext)
         {
