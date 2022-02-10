@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using NLayerNet6.Caching;
 using NLayerNet6.Core.Repositories;
 using NLayerNet6.Core.Services;
 using NLayerNet6.Core.UnitOfWorks;
@@ -34,6 +35,10 @@ namespace NLayerNet6.API.Modules
             builder
                 .RegisterAssemblyTypes(apiAssembly, repoAssembly, serviceAssembly)
                 .Where(x => x.Name.EndsWith("Service")).AsImplementedInterfaces().InstancePerLifetimeScope();
+
+
+
+            builder.RegisterType<ProductServiceWithCaching>().As<IProductService>();
         }
     }
 }

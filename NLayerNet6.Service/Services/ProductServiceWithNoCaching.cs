@@ -7,12 +7,12 @@ using NLayerNet6.Core.UnitOfWorks;
 
 namespace NLayerNet6.Service.Services
 {
-    public class ProductService : GenericService<Product>, IProductService
+    public class ProductServiceWithNoCaching : GenericService<Product>, IProductService
     {
         private readonly IProductRepository _productRepository;
         private readonly IMapper _mapper;
 
-        public ProductService(IGenericRepository<Product> repository, IUnitOfWork unitOfWork, IProductRepository productRepository, IMapper mapper) : base(repository, unitOfWork)
+        public ProductServiceWithNoCaching(IGenericRepository<Product> repository, IUnitOfWork unitOfWork, IProductRepository productRepository, IMapper mapper) : base(repository, unitOfWork)
         {
             _productRepository = productRepository;
             _mapper = mapper;

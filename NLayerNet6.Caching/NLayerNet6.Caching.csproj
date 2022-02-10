@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\NLayerNet6.Service\NLayerNet6.Service.csproj" />
+  </ItemGroup>
+
 </Project>
