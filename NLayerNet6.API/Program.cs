@@ -1,17 +1,13 @@
+using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NLayerNet6.API.Filters;
 using NLayerNet6.API.Middlewares;
-using NLayerNet6.Core.Repositories;
-using NLayerNet6.Core.Services;
-using NLayerNet6.Core.UnitOfWorks;
+using NLayerNet6.API.Modules;
 using NLayerNet6.Repository;
-using NLayerNet6.Repository.Repositories;
-using NLayerNet6.Repository.UnitOfWorks;
 using NLayerNet6.Service.Mapping;
-using NLayerNet6.Service.Services;
 using NLayerNet6.Service.Validations;
 using System.Reflection;
 
@@ -33,17 +29,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped(typeof(NotFoundFilter<>));
-
-builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
-builder.Services.AddScoped(typeof(IGenericRepository<>),typeof(GenericRepository<>));
-builder.Services.AddScoped(typeof(IGenericService<>), typeof(GenericService<>));
 builder.Services.AddAutoMapper(typeof(MapProfile));
-
-builder.Services.AddScoped<IProductRepository, ProductRepository>();
-builder.Services.AddScoped<IProductService, ProductService>();
-
-builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
-builder.Services.AddScoped<ICategoryService, CategoryService>();
 
 builder.Services.AddDbContext<AppDbContext>(x =>
 {
@@ -52,6 +38,11 @@ builder.Services.AddDbContext<AppDbContext>(x =>
         option.MigrationsAssembly(Assembly.GetAssembly(typeof(AppDbContext)).GetName().Name);
     });
 });
+
+
+
+builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
+builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder => containerBuilder.RegisterModule(new RepoServiceModule()));
 
 
 
