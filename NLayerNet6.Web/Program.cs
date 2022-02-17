@@ -1,15 +1,18 @@
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
+using FluentValidation.AspNetCore;
 using Microsoft.EntityFrameworkCore;
 using NLayerNet6.Repository;
 using NLayerNet6.Service.Mapping;
+using NLayerNet6.Service.Validations;
 using NLayerNet6.Web.Modules;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews()
+    .AddFluentValidation(x => x.RegisterValidatorsFromAssemblyContaining<ProductValidator>());
 
 builder.Services.AddAutoMapper(typeof(MapProfile));
 

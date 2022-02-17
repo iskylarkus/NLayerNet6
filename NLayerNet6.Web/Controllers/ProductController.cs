@@ -31,7 +31,9 @@ namespace NLayerNet6.Web.Controllers
         {
             var categories = await _categoryService.GetAllAsync();
 
-            var categoryDto = _mapper.Map<List<CategoryDto>>(categories.ToList());
+            var categoryDto = new List<CategoryDto>();
+            categoryDto.Add(new CategoryDto { Id = 0, Name = "Lütfen Seçiniz..." });
+            categoryDto.AddRange(_mapper.Map<List<CategoryDto>>(categories.ToList()));
 
             ViewBag.Categories = new SelectList(categoryDto, "Id", "Name");
 
@@ -49,7 +51,9 @@ namespace NLayerNet6.Web.Controllers
 
             var categories = await _categoryService.GetAllAsync();
 
-            var categoryDto = _mapper.Map<List<CategoryDto>>(categories.ToList());
+            var categoryDto = new List<CategoryDto>();
+            categoryDto.Add(new CategoryDto { Id = 0, Name = "Lütfen Seçiniz..." });
+            categoryDto.AddRange(_mapper.Map<List<CategoryDto>>(categories.ToList()));
 
             ViewBag.Categories = new SelectList(categoryDto, "Id", "Name");
 
