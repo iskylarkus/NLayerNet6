@@ -60,6 +60,7 @@ namespace NLayerNet6.Web.Controllers
             return View();
         }
 
+        [ServiceFilter(typeof(NotFoundFilter<Product>))]
         [HttpGet("Update/{id}")]
         public async Task<IActionResult> Update(int id)
         {
