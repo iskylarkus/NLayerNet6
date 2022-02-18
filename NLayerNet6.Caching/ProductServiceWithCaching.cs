@@ -71,7 +71,7 @@ namespace NLayerNet6.Caching
             return Task.FromResult(product);
         }
 
-        public Task<List<ProductWithCategoryDto>> GetProductWithCategory()
+        public Task<ResponseDto<List<ProductWithCategoryDto>>> GetProductWithCategory()
         {
             //var products = await _productRepository.GetProductWithCategory();
             //var productsDto = _mapper.Map<List<ProductWithCategoryDto>>(products);
@@ -79,7 +79,7 @@ namespace NLayerNet6.Caching
 
             var products = _memoryCache.Get<IEnumerable<Product>>(ProductCacheKey);
             var productsDto = _mapper.Map<List<ProductWithCategoryDto>>(products);
-            return Task.FromResult(productsDto);
+            return Task.FromResult(ResponseDto<List<ProductWithCategoryDto>>.Success(200, productsDto));
         }
 
         public async Task RemoveAsync(Product entity)

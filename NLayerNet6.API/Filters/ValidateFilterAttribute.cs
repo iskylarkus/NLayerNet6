@@ -4,7 +4,7 @@ using NLayerNet6.Core.Dtos;
 
 namespace NLayerNet6.API.Filters
 {
-    public class ValidateFilterAttribute:ActionFilterAttribute
+    public class ValidateFilterAttribute : ActionFilterAttribute
     {
         public override void OnActionExecuting(ActionExecutingContext context)
         {

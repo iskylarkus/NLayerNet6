@@ -23,7 +23,7 @@ namespace NLayerNet6.API.Middlewares
                         NotFoundException => 404,
                         _ => 500
                     };
-                    
+
                     context.Response.StatusCode = statusCode;
 
                     var response = ResponseDto<NoContentDto>.Fail(statusCode, exceptionFeature.Error.Message);

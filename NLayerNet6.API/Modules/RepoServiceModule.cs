@@ -1,5 +1,4 @@
 ﻿using Autofac;
-using NLayerNet6.Caching;
 using NLayerNet6.Core.Repositories;
 using NLayerNet6.Core.Services;
 using NLayerNet6.Core.UnitOfWorks;
@@ -13,7 +12,7 @@ using Module = Autofac.Module;
 
 namespace NLayerNet6.API.Modules
 {
-    public class RepoServiceModule:Module
+    public class RepoServiceModule : Module
     {
         protected override void Load(ContainerBuilder builder)
         {
@@ -38,7 +37,7 @@ namespace NLayerNet6.API.Modules
 
 
 
-            builder.RegisterType<ProductServiceWithCaching>().As<IProductService>();
+            //builder.RegisterType<ProductServiceWithCaching>().As<IProductService>();
         }
     }
 }

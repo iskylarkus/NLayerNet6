@@ -1,8 +1,10 @@
 ﻿@{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Product List";
 }
 @model List<ProductWithCategoryDto>
-<h1>Index</h1>
+<h1>Product List</h1>
+
+<a class="btn btn-primary" asp-controller="Products" asp-action="Save">New Product</a>
 
 <table class="table table-striped">
     <thead>
