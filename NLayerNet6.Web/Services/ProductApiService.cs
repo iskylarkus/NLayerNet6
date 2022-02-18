@@ -1,5 +1,4 @@
 ﻿using NLayerNet6.Core.Dtos;
-using NLayerNet6.Core.Models;
 
 namespace NLayerNet6.Web.Services
 {
@@ -12,9 +11,9 @@ namespace NLayerNet6.Web.Services
             _httpClient = httpClient;
         }
 
-        public async Task<List<ProductWithCategoryDto>> GetProductWithCategoryAsync()
+        public async Task<List<ProductWithCategoryDto>> GetProductsWithCategoryAsync()
         {
-            var response = await _httpClient.GetFromJsonAsync<ResponseDto<List<ProductWithCategoryDto>>>("products/GetProductWithCategory");
+            var response = await _httpClient.GetFromJsonAsync<ResponseDto<List<ProductWithCategoryDto>>>("products/GetProductsWithCategory");
             return response.Data;
         }
 
@@ -28,7 +27,7 @@ namespace NLayerNet6.Web.Services
             }
 
             var responseBody = await response.Content.ReadFromJsonAsync<ResponseDto<ProductDto>>();
-            
+
             return responseBody.Data;
         }
 
