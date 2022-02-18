@@ -12,7 +12,7 @@ using Module = Autofac.Module;
 
 namespace NLayerNet6.Web.Modules
 {
-    public class RepoServiceModule:Module
+    public class RepoServiceModule : Module
     {
         protected override void Load(ContainerBuilder builder)
         {
