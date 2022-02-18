@@ -16,4 +16,8 @@
     <ProjectReference Include="..\NLayerNet6.Service\NLayerNet6.Service.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+
 </Project>

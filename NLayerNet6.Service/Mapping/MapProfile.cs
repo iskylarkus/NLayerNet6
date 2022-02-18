@@ -4,7 +4,7 @@ using NLayerNet6.Core.Models;
 
 namespace NLayerNet6.Service.Mapping
 {
-    public class MapProfile:Profile
+    public class MapProfile : Profile
     {
         public MapProfile()
         {

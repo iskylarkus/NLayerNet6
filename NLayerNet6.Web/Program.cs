@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using NLayerNet6.Repository;
 using NLayerNet6.Service.Mapping;
 using NLayerNet6.Service.Validations;
+using NLayerNet6.Web;
 using NLayerNet6.Web.Modules;
 using System.Reflection;
 
@@ -23,6 +24,8 @@ builder.Services.AddDbContext<AppDbContext>(x =>
         option.MigrationsAssembly(Assembly.GetAssembly(typeof(AppDbContext)).GetName().Name);
     });
 });
+
+builder.Services.AddScoped(typeof(NotFoundFilter<>));
 
 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder => containerBuilder.RegisterModule(new RepoServiceModule()));
