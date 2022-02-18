@@ -5,6 +5,6 @@ namespace NLayerNet6.Core.Services
 {
     public interface IProductService : IGenericService<Product>
     {
-        Task<List<ProductWithCategoryDto>> GetProductWithCategory();
+        Task<ResponseDto<List<ProductWithCategoryDto>>> GetProductWithCategory();
     }
 }

@@ -38,7 +38,7 @@ namespace NLayerNet6.API.Modules
 
 
 
-            builder.RegisterType<ProductServiceWithCaching>().As<IProductService>();
+            //builder.RegisterType<ProductServiceWithCaching>().As<IProductService>();
         }
     }
 }
